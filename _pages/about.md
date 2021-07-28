@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <!-- ![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl") {:height="200px" width="100px"} -->
-<img src="https://raw.githubusercontent.com/mldurga/easydl/master/images/DurgaKumar.JPG" width="250" height="225">
+<img src="/images/DurgaKumar.JPG" width="250" height="300">
 
 
 
