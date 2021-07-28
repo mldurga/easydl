@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-![](C:\Users\durga\Downloads\DurgaKumar)
+![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl")
 
 
 
