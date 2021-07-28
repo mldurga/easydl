@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-![]({{site.baseurl}}/images/DurgaKumar.JPG =250x "https://github.com/mldurga/easydl")
+![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl") {:height="200px" width="100px"}
 
 
 
