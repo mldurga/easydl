@@ -335,11 +335,11 @@ img.emoji { display: inline !important; vertical-align: baseline !important; }
 
 .post-link { font-weight: normal; }
 
-h1 { margin-top: 2.5rem !important; }
+h1 { margin-top: 2.5rem !important; color: #F48931; }
 
 h2 { margin-top: 2rem !important; }
 
-h3, h4 { margin-top: 1.5rem !important; }
+h3, h4 { margin-top: 1.5rem !important; color: #31B0F4; }
 
 p { margin-top: 1rem !important; margin-bottom: 1rem !important; }
 
