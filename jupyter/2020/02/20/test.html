@@ -78,7 +78,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      5 min read
     
 </span></p>
 
@@ -162,72 +162,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">mkdir</span> <span class="n">data</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">pwd</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/content
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="mi">7</span><span class="n">z</span> <span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">gdrive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">AI_projects_Data</span><span class="o">/</span><span class="n">scada</span><span class="o">/</span><span class="n">scada_tpp</span><span class="o">.</span><span class="mi">7</span><span class="n">z</span> <span class="o">-</span><span class="n">odata</span>
+<span class="err">!</span><span class="mi">7</span><span class="n">z</span> <span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">gdrive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">AI_projects_Data</span><span class="o">/</span><span class="n">scada</span><span class="o">/</span><span class="n">scada_tpp</span><span class="o">.</span><span class="mi">7</span><span class="n">z</span> <span class="o">-</span><span class="n">odata</span>
 </pre></div>
 
     </div>
@@ -257,7 +193,7 @@ Method = LZMA2:12m
 Solid = +
 Blocks = 1
 
-  0%     79% 28 - scada_tpp/july/15072118.xlsx                                      Everything is Ok
+  0%     34% 3 - scada_tpp/august/01082106.xlsx                                       Everything is Ok
 
 Folders: 3
 Files: 58
@@ -669,647 +605,6 @@ Compressed: 9204268
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Time</th>
-      <th>Total_COG</th>
-      <th>Total_BFG</th>
-      <th>COG_inj</th>
-      <th>Blr1_stm_fl</th>
-      <th>Blr2_stm_fl</th>
-      <th>Blr3_stm_fl</th>
-      <th>Blr4_stm_fl</th>
-      <th>Blr5_stm_fl</th>
-      <th>Blr6_stm_fl</th>
-      <th>Blr1_COG_fl</th>
-      <th>Blr2_COG_fl</th>
-      <th>Blr3_COG_fl</th>
-      <th>Blr4_COG_fl</th>
-      <th>Blr5_COG_fl</th>
-      <th>Blr5_BFG_fl</th>
-      <th>Blr4_BFG_fl</th>
-      <th>Blr3_BFG_fl</th>
-      <th>Blr1_BFG_fl</th>
-      <th>Blr2_BFG_fl</th>
-      <th>Blr6_BFG_fl</th>
-      <th>ActPower_TG1</th>
-      <th>ActPower_TG2</th>
-      <th>ActPower_TG3</th>
-      <th>ActPower_TG4</th>
-      <th>ActPower_TG5</th>
-      <th>ActPower_BPTG1</th>
-      <th>ActPower_BPTG2</th>
-      <th>ActPower_GETS2</th>
-      <th>ActPower_GETS1</th>
-      <th>ActPower_COB4</th>
-      <th>ActPower_SHRPP</th>
-      <th>ActPower_TRT</th>
-      <th>ActPower_PP2</th>
-      <th>ActPower_TOTAL</th>
-      <th>IMPORT</th>
-      <th>EXPORT</th>
-      <th>BF1_COLD_BLAST</th>
-      <th>BF2_COLD_BLAST</th>
-      <th>BF3_COLD_BLAST</th>
-      <th>PP2_Blr1_stm_fl</th>
-      <th>PP2_Blr1_stm_fl</th>
-      <th>PP2_Blr2_COG_fl</th>
-      <th>PP2_Blr1_COG_fl</th>
-      <th>PP2_Blr1_BFG_fl</th>
-      <th>PP2_Blr2_BFG_fl</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2021-07-15 06:00:00</td>
-      <td>55783.931030</td>
-      <td>613856.706900</td>
-      <td>4826.666667</td>
-      <td>255.906667</td>
-      <td>219.546667</td>
-      <td>0.093333</td>
-      <td>210.466667</td>
-      <td>311.400000</td>
-      <td>375.7050</td>
-      <td>8448.833333</td>
-      <td>9250.954102</td>
-      <td>155.500003</td>
-      <td>17062.237630</td>
-      <td>12625.304360</td>
-      <td>4720.333333</td>
-      <td>66492.666670</td>
-      <td>589.333333</td>
-      <td>58349.666670</td>
-      <td>30135.333330</td>
-      <td>101752.586200</td>
-      <td>49.676435</td>
-      <td>48.884159</td>
-      <td>50.472379</td>
-      <td>32.096167</td>
-      <td>47.193966</td>
-      <td>6.559071</td>
-      <td>3.718974</td>
-      <td>2.079202</td>
-      <td>2.779181</td>
-      <td>5.611143</td>
-      <td>0.010400</td>
-      <td>6.887196</td>
-      <td>118.216667</td>
-      <td>383.987081</td>
-      <td>62.332998</td>
-      <td>0.0</td>
-      <td>339936.406300</td>
-      <td>297196.197900</td>
-      <td>5058.680339</td>
-      <td>223.158854</td>
-      <td>226.611979</td>
-      <td>3914.880000</td>
-      <td>4281.066667</td>
-      <td>171787.5</td>
-      <td>183752.5</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2021-07-15 06:02:24</td>
-      <td>52758.156185</td>
-      <td>610084.660268</td>
-      <td>4919.146667</td>
-      <td>255.669867</td>
-      <td>222.266667</td>
-      <td>1.635733</td>
-      <td>212.015467</td>
-      <td>305.505600</td>
-      <td>380.6514</td>
-      <td>8053.863099</td>
-      <td>8813.688164</td>
-      <td>155.500000</td>
-      <td>15373.507784</td>
-      <td>12199.233896</td>
-      <td>629.453333</td>
-      <td>66381.146667</td>
-      <td>594.773333</td>
-      <td>58238.146667</td>
-      <td>28851.493333</td>
-      <td>101899.839508</td>
-      <td>49.625725</td>
-      <td>49.748761</td>
-      <td>50.421902</td>
-      <td>32.058806</td>
-      <td>47.180336</td>
-      <td>6.612147</td>
-      <td>3.977640</td>
-      <td>2.006621</td>
-      <td>2.743417</td>
-      <td>5.592871</td>
-      <td>0.010400</td>
-      <td>6.683129</td>
-      <td>119.370667</td>
-      <td>386.066363</td>
-      <td>63.416838</td>
-      <td>0.0</td>
-      <td>340968.361276</td>
-      <td>297619.562892</td>
-      <td>4717.864948</td>
-      <td>223.272604</td>
-      <td>228.034479</td>
-      <td>3891.225600</td>
-      <td>4279.889067</td>
-      <td>171333.9</td>
-      <td>183544.9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2021-07-15 06:04:48</td>
-      <td>55346.521902</td>
-      <td>611734.286050</td>
-      <td>5006.106666</td>
-      <td>264.706667</td>
-      <td>230.200000</td>
-      <td>-0.133867</td>
-      <td>222.016000</td>
-      <td>293.845867</td>
-      <td>390.3450</td>
-      <td>8709.192207</td>
-      <td>9026.152761</td>
-      <td>151.923502</td>
-      <td>16696.190404</td>
-      <td>12680.402912</td>
-      <td>745.733333</td>
-      <td>66618.920000</td>
-      <td>501.160000</td>
-      <td>57579.226664</td>
-      <td>29621.706664</td>
-      <td>102289.393593</td>
-      <td>49.589352</td>
-      <td>51.670523</td>
-      <td>50.425633</td>
-      <td>38.214120</td>
-      <td>47.140453</td>
-      <td>6.602970</td>
-      <td>4.419327</td>
-      <td>2.054747</td>
-      <td>2.756197</td>
-      <td>5.606229</td>
-      <td>0.010400</td>
-      <td>6.693920</td>
-      <td>119.788667</td>
-      <td>394.681095</td>
-      <td>35.350479</td>
-      <td>0.0</td>
-      <td>340421.040388</td>
-      <td>295086.958316</td>
-      <td>4895.239857</td>
-      <td>223.484583</td>
-      <td>229.624688</td>
-      <td>3941.367466</td>
-      <td>4291.959466</td>
-      <td>170963.1</td>
-      <td>183581.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2021-07-15 06:07:12</td>
-      <td>56334.838664</td>
-      <td>610725.224861</td>
-      <td>4325.760000</td>
-      <td>265.393600</td>
-      <td>228.768000</td>
-      <td>0.475200</td>
-      <td>222.422400</td>
-      <td>303.577600</td>
-      <td>390.4110</td>
-      <td>8576.602422</td>
-      <td>9165.947383</td>
-      <td>122.534001</td>
-      <td>17084.163671</td>
-      <td>13038.519492</td>
-      <td>862.920000</td>
-      <td>65308.560000</td>
-      <td>268.600000</td>
-      <td>57804.080000</td>
-      <td>30057.360000</td>
-      <td>101872.914211</td>
-      <td>49.507117</td>
-      <td>51.735209</td>
-      <td>50.459352</td>
-      <td>41.813001</td>
-      <td>47.144430</td>
-      <td>6.608896</td>
-      <td>4.691723</td>
-      <td>2.077191</td>
-      <td>2.748161</td>
-      <td>5.610267</td>
-      <td>0.010400</td>
-      <td>6.927508</td>
-      <td>119.340498</td>
-      <td>398.510631</td>
-      <td>22.270320</td>
-      <td>0.0</td>
-      <td>337018.512540</td>
-      <td>296206.858748</td>
-      <td>5034.670273</td>
-      <td>223.720313</td>
-      <td>229.860938</td>
-      <td>3912.960000</td>
-      <td>4284.800000</td>
-      <td>170668.5</td>
-      <td>183829.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2021-07-15 06:09:36</td>
-      <td>56996.185368</td>
-      <td>615631.248069</td>
-      <td>4898.000000</td>
-      <td>262.877333</td>
-      <td>228.106667</td>
-      <td>-1.259200</td>
-      <td>219.472000</td>
-      <td>318.340267</td>
-      <td>391.0362</td>
-      <td>8625.895911</td>
-      <td>9264.171472</td>
-      <td>88.997832</td>
-      <td>17236.138910</td>
-      <td>12933.194260</td>
-      <td>779.280000</td>
-      <td>66509.666667</td>
-      <td>462.400000</td>
-      <td>57962.520000</td>
-      <td>30696.333333</td>
-      <td>102593.246088</td>
-      <td>49.561480</td>
-      <td>51.746712</td>
-      <td>50.435974</td>
-      <td>42.133168</td>
-      <td>47.152799</td>
-      <td>6.617838</td>
-      <td>4.725007</td>
-      <td>2.056070</td>
-      <td>2.800367</td>
-      <td>5.603761</td>
-      <td>0.010400</td>
-      <td>7.011028</td>
-      <td>118.054001</td>
-      <td>397.826609</td>
-      <td>31.359919</td>
-      <td>0.0</td>
-      <td>337715.816692</td>
-      <td>296601.986644</td>
-      <td>5085.494570</td>
-      <td>223.784896</td>
-      <td>230.159271</td>
-      <td>3907.793067</td>
-      <td>4282.670933</td>
-      <td>171779.0</td>
-      <td>185924.6</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>296</th>
-      <td>2021-08-13 05:50:24</td>
-      <td>105981.745619</td>
-      <td>402946.672659</td>
-      <td>59.706667</td>
-      <td>271.908800</td>
-      <td>236.526933</td>
-      <td>69.162133</td>
-      <td>246.366400</td>
-      <td>286.683733</td>
-      <td>-1.9800</td>
-      <td>27180.777444</td>
-      <td>35623.702292</td>
-      <td>44.369334</td>
-      <td>17669.101585</td>
-      <td>16631.140038</td>
-      <td>27163.960000</td>
-      <td>299.200000</td>
-      <td>471.240000</td>
-      <td>32850.346667</td>
-      <td>391.226667</td>
-      <td>768.864447</td>
-      <td>20.624317</td>
-      <td>20.260034</td>
-      <td>46.113942</td>
-      <td>17.706454</td>
-      <td>47.117819</td>
-      <td>6.464921</td>
-      <td>5.884420</td>
-      <td>1.622113</td>
-      <td>3.622527</td>
-      <td>6.215979</td>
-      <td>6.686719</td>
-      <td>6.916879</td>
-      <td>113.208332</td>
-      <td>311.867186</td>
-      <td>118.561886</td>
-      <td>0.0</td>
-      <td>357959.683332</td>
-      <td>301089.092940</td>
-      <td>5483.287350</td>
-      <td>214.179375</td>
-      <td>214.781458</td>
-      <td>4504.887467</td>
-      <td>4487.296000</td>
-      <td>169009.0</td>
-      <td>169755.1</td>
-    </tr>
-    <tr>
-      <th>297</th>
-      <td>2021-08-13 05:52:48</td>
-      <td>107090.907691</td>
-      <td>403379.083363</td>
-      <td>693.093333</td>
-      <td>269.854933</td>
-      <td>237.880000</td>
-      <td>69.156800</td>
-      <td>246.424533</td>
-      <td>288.084267</td>
-      <td>-0.2016</td>
-      <td>27327.207236</td>
-      <td>36101.811565</td>
-      <td>99.830999</td>
-      <td>17597.779453</td>
-      <td>16617.662553</td>
-      <td>26687.053336</td>
-      <td>779.053333</td>
-      <td>928.200000</td>
-      <td>32268.040000</td>
-      <td>1903.093334</td>
-      <td>845.457788</td>
-      <td>20.589842</td>
-      <td>20.253511</td>
-      <td>46.013037</td>
-      <td>17.792940</td>
-      <td>47.119986</td>
-      <td>6.359504</td>
-      <td>5.859588</td>
-      <td>1.669067</td>
-      <td>3.677432</td>
-      <td>6.231684</td>
-      <td>6.745395</td>
-      <td>6.714683</td>
-      <td>114.305834</td>
-      <td>312.920204</td>
-      <td>114.268438</td>
-      <td>0.0</td>
-      <td>357347.040000</td>
-      <td>301582.507888</td>
-      <td>5466.623086</td>
-      <td>216.234479</td>
-      <td>215.905833</td>
-      <td>4519.189334</td>
-      <td>4486.830934</td>
-      <td>168852.9</td>
-      <td>170560.8</td>
-    </tr>
-    <tr>
-      <th>298</th>
-      <td>2021-08-13 05:55:12</td>
-      <td>105863.881187</td>
-      <td>401867.664555</td>
-      <td>1338.800000</td>
-      <td>268.587200</td>
-      <td>236.099200</td>
-      <td>69.283200</td>
-      <td>246.808000</td>
-      <td>289.222400</td>
-      <td>-1.4904</td>
-      <td>27138.637339</td>
-      <td>35842.750156</td>
-      <td>137.461999</td>
-      <td>17773.961176</td>
-      <td>16269.653594</td>
-      <td>25988.920000</td>
-      <td>622.200000</td>
-      <td>684.760000</td>
-      <td>31429.600000</td>
-      <td>724.200000</td>
-      <td>891.804943</td>
-      <td>20.623935</td>
-      <td>20.247058</td>
-      <td>46.168975</td>
-      <td>17.728560</td>
-      <td>47.118612</td>
-      <td>6.303738</td>
-      <td>5.804820</td>
-      <td>1.581792</td>
-      <td>3.595690</td>
-      <td>6.225362</td>
-      <td>6.875412</td>
-      <td>6.881188</td>
-      <td>115.813999</td>
-      <td>314.325306</td>
-      <td>118.586643</td>
-      <td>0.0</td>
-      <td>357969.676272</td>
-      <td>304237.085040</td>
-      <td>5470.182598</td>
-      <td>216.750625</td>
-      <td>217.103750</td>
-      <td>4530.048000</td>
-      <td>4491.942400</td>
-      <td>168668.4</td>
-      <td>170688.6</td>
-    </tr>
-    <tr>
-      <th>299</th>
-      <td>2021-08-13 05:57:36</td>
-      <td>104981.873301</td>
-      <td>402792.256229</td>
-      <td>716.240000</td>
-      <td>271.413333</td>
-      <td>236.920000</td>
-      <td>68.315733</td>
-      <td>247.401600</td>
-      <td>290.849600</td>
-      <td>-2.2254</td>
-      <td>26675.455030</td>
-      <td>35385.320053</td>
-      <td>181.572167</td>
-      <td>17551.699662</td>
-      <td>16028.421383</td>
-      <td>26298.546667</td>
-      <td>337.280000</td>
-      <td>259.080000</td>
-      <td>31555.173333</td>
-      <td>4292.160000</td>
-      <td>994.476813</td>
-      <td>20.613899</td>
-      <td>20.227214</td>
-      <td>46.146504</td>
-      <td>17.798307</td>
-      <td>47.112621</td>
-      <td>6.297712</td>
-      <td>5.682462</td>
-      <td>1.599281</td>
-      <td>3.561904</td>
-      <td>6.243906</td>
-      <td>6.837592</td>
-      <td>6.814098</td>
-      <td>113.204167</td>
-      <td>311.537950</td>
-      <td>120.595920</td>
-      <td>0.0</td>
-      <td>355247.112548</td>
-      <td>301192.922892</td>
-      <td>5439.885091</td>
-      <td>216.019688</td>
-      <td>216.297083</td>
-      <td>4535.884800</td>
-      <td>4487.441067</td>
-      <td>170106.9</td>
-      <td>171083.5</td>
-    </tr>
-    <tr>
-      <th>300</th>
-      <td>2021-08-13 06:00:00</td>
-      <td>105580.755100</td>
-      <td>403812.327600</td>
-      <td>746.000000</td>
-      <td>267.893333</td>
-      <td>237.400000</td>
-      <td>69.173333</td>
-      <td>244.080000</td>
-      <td>292.520000</td>
-      <td>-2.1750</td>
-      <td>26988.320960</td>
-      <td>35509.720050</td>
-      <td>107.554166</td>
-      <td>17542.991540</td>
-      <td>16221.241540</td>
-      <td>26899.666670</td>
-      <td>272.000000</td>
-      <td>969.000000</td>
-      <td>32039.333330</td>
-      <td>2856.000000</td>
-      <td>819.827586</td>
-      <td>20.587455</td>
-      <td>20.236145</td>
-      <td>46.078917</td>
-      <td>17.805667</td>
-      <td>47.117604</td>
-      <td>6.260019</td>
-      <td>5.642767</td>
-      <td>1.602066</td>
-      <td>3.776671</td>
-      <td>6.209253</td>
-      <td>6.458200</td>
-      <td>6.774291</td>
-      <td>114.354167</td>
-      <td>312.129425</td>
-      <td>122.225998</td>
-      <td>0.0</td>
-      <td>356719.062500</td>
-      <td>302614.197900</td>
-      <td>5326.162435</td>
-      <td>216.492188</td>
-      <td>217.052083</td>
-      <td>4540.800000</td>
-      <td>4493.226667</td>
-      <td>169372.5</td>
-      <td>170207.5</td>
-    </tr>
-  </tbody>
-</table>
-<p>17458 rows × 46 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">'ms'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -1327,143 +622,15 @@ Compressed: 9204268
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Index(['Time', 'Pane1-Total COG flow to TPP and PP2 boilers',
-       'Pane1-Total BFG flow to TPP and PP2 boilers',
-       'Pane1-GBS CG4 FLOW FOR MIXING WITH BFG',
-       'Pane1-PBH BLR1 SH ST1 OUTLT HDR FLOW',
-       'Pane1-PBH BLR2 SH ST1 OUTLT HDR FLOW',
-       'Pane1-PBH BLR3 SH ST1 OUTLT HDR FLOW',
-       'Pane1-PBH BLR4 SH ST1 OUTLT HDR FLOW',
-       'Pane1-PBH BLR5 SH ST1 OUTLT HDR FLOW', 'Pane1-BOILER-6 STEAM FLOW',
-       'Pane1-PBH BLR1 CG4 GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR2 CG4 GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR3 CG4 GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR4 CG4 GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR5 CG4 GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR5 BFG GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR4 BFG GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR3 BFG GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR1 BFG GAS SUPPLY HDR FLOW',
-       'Pane1-PBH BLR2 BFG GAS SUPPLY HDR FLOW',
-       'Pane1-BFG MAIN HDR FLOW BOILER-6', 'Pane1-Active Power of GSB1 GEN1',
-       'Pane1-Active Power of GSB1 GEN2', 'Pane1-Active Power of GSB1 GEN3',
-       'Pane1-MWH', 'Pane1-Import Active Power of TG5 Generation',
-       'Pane1-Active Power of BPTG GEN1', 'Pane1-Active Power of BPTG GEN2',
-       'Pane1-Active Power of GETS GEN2', 'Pane1-Active Power of GETS GEN1',
-       'Pane1-MWH.1', 'Pane1-SHRPP TOTAL ACTIVE POWER', 'Pane1-BF-3 TRT MW',
-       'Pane1-MW AT PP-2', 'Pane1-MW OF TOTAL GENERATION',
-       'Pane1-MW OF IMPORT', 'Pane1-MW OF EXPORT',
-       'Pane1-BF1 SCH COLD BLAST INLT HDR FLOW',
-       'Pane1-BF2 SCH COLD BLAST INLT HDR FLOW',
-       'Pane1-COLD BLAST FLOW AT BF3',
-       'Pane1-MAIN STEAM HDR FLOW AT BOILER1 OF PP-2',
-       'Pane1-MAIN STEAM HDR FLOW AT BOILER2 OF PP-2',
-       'Pane1-CO GAS HDR FLOW AT BOILER2 OF PP-2',
-       'Pane1-CO GAS HDR FLOW AT BOILER-1 PP-2',
-       'Pane1-BF GAS HDR FLOW AT BOILER-1 PP-2',
-       'Pane1-BF GAS HDR FLOW AT BOILER2 OF PP-2'],
-      dtype='object')</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Time'</span><span class="p">,</span> <span class="s1">'Total_COG'</span><span class="p">,</span>
-       <span class="s1">'Total_BFG'</span><span class="p">,</span>
-       <span class="s1">'COG_inj'</span><span class="p">,</span>
-       <span class="s1">'Blr1_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr2_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr3_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr4_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr5_stm_fl'</span><span class="p">,</span> <span class="s1">'Blr6_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr1_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr2_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr3_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr4_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr5_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr5_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr4_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr3_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr1_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr2_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'Blr6_BFG_fl'</span><span class="p">,</span> <span class="s1">'ActPower_TG1'</span><span class="p">,</span>
-       <span class="s1">'ActPower_TG2'</span><span class="p">,</span> <span class="s1">'ActPower_TG3'</span><span class="p">,</span>
-       <span class="s1">'ActPower_TG4'</span><span class="p">,</span> <span class="s1">'ActPower_TG5'</span><span class="p">,</span>
-       <span class="s1">'ActPower_BPTG1'</span><span class="p">,</span> <span class="s1">'ActPower_BPTG2'</span><span class="p">,</span>
-       <span class="s1">'ActPower_GETS2'</span><span class="p">,</span> <span class="s1">'ActPower_GETS1'</span><span class="p">,</span>
-       <span class="s1">'ActPower_COB4'</span><span class="p">,</span> <span class="s1">'ActPower_SHRPP'</span><span class="p">,</span> <span class="s1">'ActPower_TRT'</span><span class="p">,</span>
-       <span class="s1">'ActPower_PP2'</span><span class="p">,</span> <span class="s1">'ActPower_TOTAL'</span><span class="p">,</span>
-       <span class="s1">'IMPORT'</span><span class="p">,</span> <span class="s1">'EXPORT'</span><span class="p">,</span>
-       <span class="s1">'BF1_COLD_BLAST'</span><span class="p">,</span>
-       <span class="s1">'BF2_COLD_BLAST'</span><span class="p">,</span>
-       <span class="s1">'BF3_COLD_BLAST'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr1_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr2_stm_fl'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr2_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr1_COG_fl'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr1_BFG_fl'</span><span class="p">,</span>
-       <span class="s1">'PP2_Blr2_BFG_fl'</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">columns</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Time'</span><span class="p">,</span> <span class="s1">'Total_COG'</span><span class="p">,</span><span class="s1">'Total_BFG'</span><span class="p">,</span><span class="s1">'COG_inj'</span><span class="p">,</span><span class="s1">'Blr1_stm_fl'</span><span class="p">,</span><span class="s1">'Blr2_stm_fl'</span><span class="p">,</span><span class="s1">'Blr3_stm_fl'</span><span class="p">,</span><span class="s1">'Blr4_stm_fl'</span><span class="p">,</span><span class="s1">'Blr5_stm_fl'</span><span class="p">,</span> <span class="s1">'Blr6_stm_fl'</span><span class="p">,</span>
+       <span class="s1">'Blr1_COG_fl'</span><span class="p">,</span><span class="s1">'Blr2_COG_fl'</span><span class="p">,</span><span class="s1">'Blr3_COG_fl'</span><span class="p">,</span><span class="s1">'Blr4_COG_fl'</span><span class="p">,</span><span class="s1">'Blr5_COG_fl'</span><span class="p">,</span><span class="s1">'Blr5_BFG_fl'</span><span class="p">,</span><span class="s1">'Blr4_BFG_fl'</span><span class="p">,</span><span class="s1">'Blr3_BFG_fl'</span><span class="p">,</span>
+       <span class="s1">'Blr1_BFG_fl'</span><span class="p">,</span><span class="s1">'Blr2_BFG_fl'</span><span class="p">,</span><span class="s1">'Blr6_BFG_fl'</span><span class="p">,</span> <span class="s1">'ActPower_TG1'</span><span class="p">,</span><span class="s1">'ActPower_TG2'</span><span class="p">,</span> <span class="s1">'ActPower_TG3'</span><span class="p">,</span><span class="s1">'ActPower_TG4'</span><span class="p">,</span> <span class="s1">'ActPower_TG5'</span><span class="p">,</span>
+       <span class="s1">'ActPower_BPTG1'</span><span class="p">,</span> <span class="s1">'ActPower_BPTG2'</span><span class="p">,</span><span class="s1">'ActPower_GETS2'</span><span class="p">,</span> <span class="s1">'ActPower_GETS1'</span><span class="p">,</span><span class="s1">'ActPower_COB4'</span><span class="p">,</span> <span class="s1">'ActPower_SHRPP'</span><span class="p">,</span> <span class="s1">'ActPower_TRT'</span><span class="p">,</span>
+       <span class="s1">'ActPower_PP2'</span><span class="p">,</span> <span class="s1">'ActPower_TOTAL'</span><span class="p">,</span><span class="s1">'IMPORT'</span><span class="p">,</span> <span class="s1">'EXPORT'</span><span class="p">,</span><span class="s1">'BF1_COLD_BLAST'</span><span class="p">,</span><span class="s1">'BF2_COLD_BLAST'</span><span class="p">,</span><span class="s1">'BF3_COLD_BLAST'</span><span class="p">,</span><span class="s1">'PP2_Blr1_stm_fl'</span><span class="p">,</span>
+       <span class="s1">'PP2_Blr2_stm_fl'</span><span class="p">,</span><span class="s1">'PP2_Blr2_COG_fl'</span><span class="p">,</span><span class="s1">'PP2_Blr1_COG_fl'</span><span class="p">,</span><span class="s1">'PP2_Blr1_BFG_fl'</span><span class="p">,</span><span class="s1">'PP2_Blr2_BFG_fl'</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">columns</span>
+<span class="n">df1</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1546,248 +713,248 @@ Compressed: 9204268
   <tbody>
     <tr>
       <th>0</th>
-      <td>2021-08-12 06:00:00</td>
-      <td>101551.216600</td>
-      <td>503672.672400</td>
-      <td>6094.000000</td>
-      <td>297.680000</td>
-      <td>239.786667</td>
-      <td>67.866667</td>
-      <td>226.280000</td>
-      <td>281.786667</td>
-      <td>-0.0750</td>
-      <td>27268.220700</td>
-      <td>31777.720700</td>
-      <td>62.200002</td>
-      <td>16940.429690</td>
-      <td>16572.412760</td>
-      <td>26525.666670</td>
-      <td>53221.333330</td>
-      <td>266.333333</td>
-      <td>10364.333330</td>
-      <td>1989.000000</td>
-      <td>66529.310340</td>
-      <td>23.970510</td>
-      <td>21.719055</td>
-      <td>50.095828</td>
-      <td>12.305167</td>
-      <td>42.981603</td>
-      <td>6.269791</td>
-      <td>5.401353</td>
-      <td>1.598553</td>
-      <td>3.025691</td>
-      <td>6.600560</td>
+      <td>2021-07-15 06:00:00</td>
+      <td>55783.931030</td>
+      <td>613856.706900</td>
+      <td>4826.666667</td>
+      <td>255.906667</td>
+      <td>219.546667</td>
+      <td>0.093333</td>
+      <td>210.466667</td>
+      <td>311.400000</td>
+      <td>375.7050</td>
+      <td>8448.833333</td>
+      <td>9250.954102</td>
+      <td>155.500003</td>
+      <td>17062.237630</td>
+      <td>12625.304360</td>
+      <td>4720.333333</td>
+      <td>66492.666670</td>
+      <td>589.333333</td>
+      <td>58349.666670</td>
+      <td>30135.333330</td>
+      <td>101752.586200</td>
+      <td>49.676435</td>
+      <td>48.884159</td>
+      <td>50.472379</td>
+      <td>32.096167</td>
+      <td>47.193966</td>
+      <td>6.559071</td>
+      <td>3.718974</td>
+      <td>2.079202</td>
+      <td>2.779181</td>
+      <td>5.611143</td>
       <td>0.0104</td>
-      <td>6.583310</td>
-      <td>112.362498</td>
-      <td>302.731740</td>
-      <td>112.418999</td>
+      <td>6.887196</td>
+      <td>118.216667</td>
+      <td>383.987081</td>
+      <td>62.332998</td>
       <td>0.0</td>
-      <td>321987.125000</td>
-      <td>293340.593800</td>
-      <td>5368.946940</td>
-      <td>211.880208</td>
-      <td>218.247396</td>
-      <td>4637.333333</td>
-      <td>4169.813333</td>
-      <td>170125.0</td>
-      <td>176427.5</td>
+      <td>339936.406300</td>
+      <td>297196.197900</td>
+      <td>5058.680339</td>
+      <td>223.158854</td>
+      <td>226.611979</td>
+      <td>3914.880000</td>
+      <td>4281.066667</td>
+      <td>171787.5</td>
+      <td>183752.5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2021-08-12 06:02:24</td>
-      <td>101920.035756</td>
-      <td>508690.087837</td>
-      <td>5835.760000</td>
-      <td>297.123200</td>
-      <td>234.269867</td>
-      <td>69.895467</td>
-      <td>227.912000</td>
-      <td>283.777067</td>
-      <td>-0.6942</td>
-      <td>27173.676636</td>
-      <td>32136.614454</td>
-      <td>95.788004</td>
-      <td>17271.954996</td>
-      <td>16217.872136</td>
-      <td>26104.066667</td>
-      <td>54589.493333</td>
-      <td>810.333333</td>
-      <td>10598.253333</td>
-      <td>675.240000</td>
-      <td>67229.619502</td>
-      <td>23.938060</td>
-      <td>21.641155</td>
-      <td>50.053336</td>
-      <td>12.350846</td>
-      <td>42.952255</td>
-      <td>6.235480</td>
-      <td>5.406851</td>
-      <td>1.615383</td>
-      <td>3.170250</td>
-      <td>6.621032</td>
+      <td>2021-07-15 06:02:24</td>
+      <td>52758.156185</td>
+      <td>610084.660268</td>
+      <td>4919.146667</td>
+      <td>255.669867</td>
+      <td>222.266667</td>
+      <td>1.635733</td>
+      <td>212.015467</td>
+      <td>305.505600</td>
+      <td>380.6514</td>
+      <td>8053.863099</td>
+      <td>8813.688164</td>
+      <td>155.500000</td>
+      <td>15373.507784</td>
+      <td>12199.233896</td>
+      <td>629.453333</td>
+      <td>66381.146667</td>
+      <td>594.773333</td>
+      <td>58238.146667</td>
+      <td>28851.493333</td>
+      <td>101899.839508</td>
+      <td>49.625725</td>
+      <td>49.748761</td>
+      <td>50.421902</td>
+      <td>32.058806</td>
+      <td>47.180336</td>
+      <td>6.612147</td>
+      <td>3.977640</td>
+      <td>2.006621</td>
+      <td>2.743417</td>
+      <td>5.592871</td>
       <td>0.0104</td>
-      <td>6.769255</td>
-      <td>114.984500</td>
-      <td>305.385534</td>
-      <td>104.595481</td>
+      <td>6.683129</td>
+      <td>119.370667</td>
+      <td>386.066363</td>
+      <td>63.416838</td>
       <td>0.0</td>
-      <td>325898.975048</td>
-      <td>294036.113800</td>
-      <td>5342.191237</td>
-      <td>212.670208</td>
-      <td>218.711146</td>
-      <td>4657.250133</td>
-      <td>4186.197333</td>
-      <td>168970.6</td>
-      <td>175670.3</td>
+      <td>340968.361276</td>
+      <td>297619.562892</td>
+      <td>4717.864948</td>
+      <td>223.272604</td>
+      <td>228.034479</td>
+      <td>3891.225600</td>
+      <td>4279.889067</td>
+      <td>171333.9</td>
+      <td>183544.9</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2021-08-12 06:04:48</td>
-      <td>101648.730895</td>
-      <td>506377.673575</td>
-      <td>5703.253334</td>
-      <td>293.720533</td>
-      <td>234.726933</td>
-      <td>68.906667</td>
-      <td>229.372267</td>
-      <td>288.269867</td>
-      <td>0.9084</td>
-      <td>27278.224528</td>
-      <td>31991.222425</td>
-      <td>165.141003</td>
-      <td>17045.547626</td>
-      <td>16294.896860</td>
-      <td>26615.653336</td>
-      <td>52913.066664</td>
-      <td>838.213333</td>
-      <td>10540.226664</td>
-      <td>3407.026666</td>
-      <td>67254.887036</td>
-      <td>23.955130</td>
-      <td>21.684837</td>
-      <td>50.014844</td>
-      <td>12.288580</td>
-      <td>42.955826</td>
-      <td>6.359599</td>
-      <td>5.489332</td>
-      <td>1.615604</td>
-      <td>2.962657</td>
-      <td>6.591925</td>
+      <td>2021-07-15 06:04:48</td>
+      <td>55346.521902</td>
+      <td>611734.286050</td>
+      <td>5006.106666</td>
+      <td>264.706667</td>
+      <td>230.200000</td>
+      <td>-0.133867</td>
+      <td>222.016000</td>
+      <td>293.845867</td>
+      <td>390.3450</td>
+      <td>8709.192207</td>
+      <td>9026.152761</td>
+      <td>151.923502</td>
+      <td>16696.190404</td>
+      <td>12680.402912</td>
+      <td>745.733333</td>
+      <td>66618.920000</td>
+      <td>501.160000</td>
+      <td>57579.226664</td>
+      <td>29621.706664</td>
+      <td>102289.393593</td>
+      <td>49.589352</td>
+      <td>51.670523</td>
+      <td>50.425633</td>
+      <td>38.214120</td>
+      <td>47.140453</td>
+      <td>6.602970</td>
+      <td>4.419327</td>
+      <td>2.054747</td>
+      <td>2.756197</td>
+      <td>5.606229</td>
       <td>0.0104</td>
-      <td>6.597269</td>
-      <td>114.336667</td>
-      <td>304.531941</td>
-      <td>100.581682</td>
+      <td>6.693920</td>
+      <td>119.788667</td>
+      <td>394.681095</td>
+      <td>35.350479</td>
       <td>0.0</td>
-      <td>328124.206300</td>
-      <td>296528.403368</td>
-      <td>5072.515404</td>
-      <td>213.901042</td>
-      <td>219.821771</td>
-      <td>4592.281600</td>
-      <td>4179.323734</td>
-      <td>169946.0</td>
-      <td>176668.0</td>
+      <td>340421.040388</td>
+      <td>295086.958316</td>
+      <td>4895.239857</td>
+      <td>223.484583</td>
+      <td>229.624688</td>
+      <td>3941.367466</td>
+      <td>4291.959466</td>
+      <td>170963.1</td>
+      <td>183581.1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2021-08-12 06:07:12</td>
-      <td>101558.265952</td>
-      <td>505379.559592</td>
-      <td>5889.200000</td>
-      <td>291.907200</td>
-      <td>237.860800</td>
-      <td>69.488000</td>
-      <td>228.953600</td>
-      <td>286.160000</td>
-      <td>-0.9828</td>
-      <td>27332.701484</td>
-      <td>31844.999997</td>
-      <td>206.970502</td>
-      <td>17316.013905</td>
-      <td>16360.466096</td>
-      <td>25377.600000</td>
-      <td>52430.720000</td>
-      <td>601.800000</td>
-      <td>9409.840000</td>
-      <td>961.520000</td>
-      <td>67190.406619</td>
-      <td>23.963564</td>
-      <td>21.686560</td>
-      <td>50.072238</td>
-      <td>12.299720</td>
-      <td>42.963882</td>
-      <td>6.406375</td>
-      <td>5.504303</td>
-      <td>1.642149</td>
-      <td>3.016826</td>
-      <td>6.618716</td>
+      <td>2021-07-15 06:07:12</td>
+      <td>56334.838664</td>
+      <td>610725.224861</td>
+      <td>4325.760000</td>
+      <td>265.393600</td>
+      <td>228.768000</td>
+      <td>0.475200</td>
+      <td>222.422400</td>
+      <td>303.577600</td>
+      <td>390.4110</td>
+      <td>8576.602422</td>
+      <td>9165.947383</td>
+      <td>122.534001</td>
+      <td>17084.163671</td>
+      <td>13038.519492</td>
+      <td>862.920000</td>
+      <td>65308.560000</td>
+      <td>268.600000</td>
+      <td>57804.080000</td>
+      <td>30057.360000</td>
+      <td>101872.914211</td>
+      <td>49.507117</td>
+      <td>51.735209</td>
+      <td>50.459352</td>
+      <td>41.813001</td>
+      <td>47.144430</td>
+      <td>6.608896</td>
+      <td>4.691723</td>
+      <td>2.077191</td>
+      <td>2.748161</td>
+      <td>5.610267</td>
       <td>0.0104</td>
-      <td>6.259154</td>
-      <td>116.193999</td>
-      <td>306.269362</td>
-      <td>100.044963</td>
+      <td>6.927508</td>
+      <td>119.340498</td>
+      <td>398.510631</td>
+      <td>22.270320</td>
       <td>0.0</td>
-      <td>329036.832484</td>
-      <td>295417.576232</td>
-      <td>5119.948848</td>
-      <td>215.286250</td>
-      <td>220.732500</td>
-      <td>4573.184000</td>
-      <td>4185.894400</td>
-      <td>170085.6</td>
-      <td>176779.5</td>
+      <td>337018.512540</td>
+      <td>296206.858748</td>
+      <td>5034.670273</td>
+      <td>223.720313</td>
+      <td>229.860938</td>
+      <td>3912.960000</td>
+      <td>4284.800000</td>
+      <td>170668.5</td>
+      <td>183829.2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2021-08-12 06:09:36</td>
-      <td>101369.599980</td>
-      <td>505231.689183</td>
-      <td>5726.960000</td>
-      <td>293.755200</td>
-      <td>236.770133</td>
-      <td>69.133867</td>
-      <td>225.089067</td>
-      <td>285.592000</td>
-      <td>-0.9024</td>
-      <td>27440.877470</td>
-      <td>31649.796172</td>
-      <td>115.277335</td>
-      <td>17163.986141</td>
-      <td>16450.292787</td>
-      <td>26477.840000</td>
-      <td>53217.026667</td>
-      <td>509.320000</td>
-      <td>10156.933333</td>
-      <td>1737.400000</td>
-      <td>67048.882282</td>
-      <td>23.964123</td>
-      <td>21.683845</td>
-      <td>50.132416</td>
-      <td>12.295367</td>
-      <td>42.968489</td>
-      <td>6.394841</td>
-      <td>5.490983</td>
-      <td>1.652965</td>
-      <td>2.997148</td>
-      <td>6.595575</td>
+      <td>2021-07-15 06:09:36</td>
+      <td>56996.185368</td>
+      <td>615631.248069</td>
+      <td>4898.000000</td>
+      <td>262.877333</td>
+      <td>228.106667</td>
+      <td>-1.259200</td>
+      <td>219.472000</td>
+      <td>318.340267</td>
+      <td>391.0362</td>
+      <td>8625.895911</td>
+      <td>9264.171472</td>
+      <td>88.997832</td>
+      <td>17236.138910</td>
+      <td>12933.194260</td>
+      <td>779.280000</td>
+      <td>66509.666667</td>
+      <td>462.400000</td>
+      <td>57962.520000</td>
+      <td>30696.333333</td>
+      <td>102593.246088</td>
+      <td>49.561480</td>
+      <td>51.746712</td>
+      <td>50.435974</td>
+      <td>42.133168</td>
+      <td>47.152799</td>
+      <td>6.617838</td>
+      <td>4.725007</td>
+      <td>2.056070</td>
+      <td>2.800367</td>
+      <td>5.603761</td>
       <td>0.0104</td>
-      <td>6.623072</td>
-      <td>114.748334</td>
-      <td>305.235693</td>
-      <td>104.931444</td>
+      <td>7.011028</td>
+      <td>118.054001</td>
+      <td>397.826609</td>
+      <td>31.359919</td>
       <td>0.0</td>
-      <td>327723.556228</td>
-      <td>301083.050808</td>
-      <td>5267.296407</td>
-      <td>214.584896</td>
-      <td>219.914271</td>
-      <td>4545.996800</td>
-      <td>4196.215467</td>
-      <td>170270.1</td>
-      <td>177122.9</td>
+      <td>337715.816692</td>
+      <td>296601.986644</td>
+      <td>5085.494570</td>
+      <td>223.784896</td>
+      <td>230.159271</td>
+      <td>3907.793067</td>
+      <td>4282.670933</td>
+      <td>171779.0</td>
+      <td>185924.6</td>
     </tr>
   </tbody>
 </table>
