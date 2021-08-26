@@ -126,6 +126,13 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>MIT Missing semester <a href="https://missing.csail.mit.edu/">Lectures</a> are greatly helps one to work with terminal, git -version control systems, data wrangling etc... Here I have listed out solutions for the exercises of each lecture.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ol>
 <li>Read <strong>man ls</strong> and write an ls command that lists files in the following manner
 Includes all files, including hidden files
@@ -175,6 +182,50 @@ drwxr-xr-x 4 root root 4.0K Aug 13 13:34 <span class="ansi-blue-intense-fg ansi-
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Write bash functions marco and polo that do the following. Whenever you execute marco the current working directory should be saved in some manner, then when you execute polo, no matter what directory you are in, polo should cd you back to the directory where you executed marco. For ease of debugging you can write the code in a file marco.sh and (re)load the definitions to your shell by executing source marco.sh.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>      touch marco.sh polo.sh
+      chmod +x marco.sh polo.sh          
+
+      marco.sh
+      marco () {
+            pwd &gt; marco.txt
+      }
+
+      polo.sh
+      polo () {
+            cd $(cat &lt; marco.txt)
+      }
+
+</code></pre>
+<p>after creating marco.sh and polo.sh files in vim call them from anywhere using source command</p>
+
+<pre><code>        source path/to/workingdir/marco.sh
+
+        source path/to/workingdir/polo.sh</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</li>
+</ol>
+
+</div>
+</div>
+</div>
 </div>
 
 
