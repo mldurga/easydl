@@ -4,19 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | mldurga</title>
+<title>CNN. Fastai chapter 13 | mldurga</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="CNN. Fastai chapter 13" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://mldurga.github.io/easydl/2021/09/20/Fastbook-chapter13.html" />
-<meta property="og:url" content="https://mldurga.github.io/easydl/2021/09/20/Fastbook-chapter13.html" />
+<meta name="description" content="Resnet paper Reading" />
+<meta property="og:description" content="Resnet paper Reading" />
+<link rel="canonical" href="https://mldurga.github.io/easydl/fastpages/jupyter/2021/09/20/Fastbook-chapter13.html" />
+<meta property="og:url" content="https://mldurga.github.io/easydl/fastpages/jupyter/2021/09/20/Fastbook-chapter13.html" />
 <meta property="og:site_name" content="mldurga" />
+<meta property="og:image" content="https://mldurga.github.io/easydl/images/some_folder/your_image.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-09-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-09-20T00:00:00-05:00","url":"https://mldurga.github.io/easydl/2021/09/20/Fastbook-chapter13.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-09-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mldurga.github.io/easydl/2021/09/20/Fastbook-chapter13.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-20T00:00:00-05:00","url":"https://mldurga.github.io/easydl/fastpages/jupyter/2021/09/20/Fastbook-chapter13.html","@type":"BlogPosting","image":"https://mldurga.github.io/easydl/images/some_folder/your_image.png","headline":"CNN. Fastai chapter 13","dateModified":"2021-09-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mldurga.github.io/easydl/fastpages/jupyter/2021/09/20/Fastbook-chapter13.html"},"description":"Resnet paper Reading","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/easydl/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mldurga.github.io/easydl/feed.xml" title="mldurga" /><link rel="shortcut icon" type="image/x-icon" href="/easydl/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,7 +72,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">CNN. Fastai chapter 13</h1><p class="page-description">Resnet paper Reading</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-20T00:00:00-05:00" itemprop="datePublished">
         Sep 20, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -81,6 +82,16 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/easydl/categories/#fastpages">fastpages</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/easydl/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
     
 
     
@@ -108,7 +119,18 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Inroduction">Inroduction </a></li>
+<li class="toc-entry toc-h2"><a href="#Terminology">Terminology </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Layers,-Filters,-Kernels,-channels-and-feature-maps">Layers, Filters, Kernels, channels and feature maps </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Layers:">Layers: </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -117,46 +139,54 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://colab.research.google.com/github/mldurga/easydl/blob/master/_notebooks/2021-09-20-Fastbook-chapter13.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&gt;</span> <span class="n">Resnet</span> <span class="n">paper</span> <span class="n">Reading</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://colab.research.google.com/github/mldurga/easydl/blob/master/_notebooks/2021-09-20-Fastbook-chapter13.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 
-<span class="o">-</span> <span class="n">toc</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">branch</span><span class="p">:</span> <span class="n">master</span>
-<span class="o">-</span> <span class="n">badges</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">comments</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">categories</span><span class="p">:</span> <span class="p">[</span><span class="n">fastpages</span><span class="p">,</span> <span class="n">jupyter</span><span class="p">]</span>
-<span class="o">-</span> <span class="n">image</span><span class="p">:</span> <span class="n">images</span><span class="o">/</span><span class="n">some_folder</span><span class="o">/</span><span class="n">your_image</span><span class="o">.</span><span class="n">png</span>
-<span class="o">-</span> <span class="n">hide</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">search_exclude</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">metadata_key1</span><span class="p">:</span> <span class="n">metadata_value1</span>
-<span class="o">-</span> <span class="n">metadata_key2</span><span class="p">:</span> <span class="n">metadata_value2</span>
-</pre></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inroduction">
+<a class="anchor" href="#Inroduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inroduction<a class="anchor-link" href="#Inroduction"> </a>
+</h2>
+<p>CNN - Convolutional Neural Networks, is most famous technique used in computer vision applications off-late. Due to rapid innovation and research in this field, these techniques undergo huge transformations in short period of time. Here is my effort to deliberate upon certain terminology and concepts so that it would not be too scary for beginners like me. This topic is a very basic introduction to the concepts and will write a basic CNN and train a digit classifier.</p>
 
-    </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Terminology">
+<a class="anchor" href="#Terminology" aria-hidden="true"><span class="octicon octicon-link"></span></a>Terminology<a class="anchor-link" href="#Terminology"> </a>
+</h2>
+<p>Following are the general terminology used day in and day out to get to know CNN better. Material from the different blogs were collected inaddition to Fastbook for better clarity and visualisation.</p>
+<h3 id="Layers,-Filters,-Kernels,-channels-and-feature-maps">
+<a class="anchor" href="#Layers,-Filters,-Kernels,-channels-and-feature-maps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Layers, Filters, Kernels, channels and feature maps<a class="anchor-link" href="#Layers,-Filters,-Kernels,-channels-and-feature-maps"> </a>
+</h3>
+<h4 id="Layers:">
+<a class="anchor" href="#Layers:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Layers:<a class="anchor-link" href="#Layers:"> </a>
+</h4>
+</div>
+</div>
 </div>
 </div>
 
-</div>
-    
-
-</div>
 
 
-
-  </div><a class="u-url" href="/easydl/2021/09/20/Fastbook-chapter13.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="mldurga/easydl"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/easydl/fastpages/jupyter/2021/09/20/Fastbook-chapter13.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
