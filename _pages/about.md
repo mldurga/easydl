@@ -4,8 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-<img src="/images/mldurga.jpg">
-<!-- ![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl") -->
+<!-- <img src="/images/mldurga.jpg"> -->
+![]({{site.baseurl}}/images/mldurga.jpg "https://github.com/mldurga/easydl")
 
 ## [Twitter](https://twitter.com/durgaamma2005) | [GitHub](https://github.com/mldurga) | [Email](durgaamma2005@gmail.com) | [LinkedIn](https://www.linkedin.com/in/durga-kumar-d-0b085922/)
 
