@@ -5,7 +5,8 @@ permalink: /about/
 ---
 # About
 
-![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl")
+<img src="/images/DurgaKumar.JPG" height="200">
+<!-- ![]({{site.baseurl}}/images/DurgaKumar.JPG "https://github.com/mldurga/easydl") -->
 
 ## [Twitter](https://twitter.com/durgaamma2005) | [GitHub](https://github.com/durgaamma2005) | [Email](durgaamma2005@gmail.com) | [LinkedIn](https://www.linkedin.com/in/durga-kumar-d-0b085922/)
 
