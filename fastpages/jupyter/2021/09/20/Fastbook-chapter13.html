@@ -78,7 +78,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      8 min read
     
 </span></p>
 
@@ -146,7 +146,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Now-lets-play-with-telugu-vowels-dataset">Now lets play with telugu vowels dataset </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Deploying-app-in-colab">Deploying app in colab </a></li>
 <li class="toc-entry toc-h2"><a href="#Credits">Credits </a></li>
 </ul><!--
 #################################################
@@ -902,73 +901,6 @@ For a real world example consider the following image from CS231n website.</p>
     </tr>
   </tbody>
 </table>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Deploying-app-in-colab">
-<a class="anchor" href="#Deploying-app-in-colab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying app in colab<a class="anchor-link" href="#Deploying-app-in-colab"> </a>
-</h2>
-<p>The Gradio, ML apps hosting service, has developed a fastgradio library so now deploying app in colab has been made much easier as follows</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install fastgradio -Uqq
-<span class="kn">from</span> <span class="nn">fastgradio</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">Demo</span><span class="p">(</span><span class="n">learn_te</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>     |████████████████████████████████| 3.4 MB 2.3 MB/s 
-     |████████████████████████████████| 1.9 MB 34.4 MB/s 
-     |████████████████████████████████| 206 kB 47.5 MB/s 
-     |████████████████████████████████| 3.5 MB 15.4 MB/s 
-     |████████████████████████████████| 961 kB 36.2 MB/s 
-     |████████████████████████████████| 63 kB 2.4 MB/s 
-  Building wheel for fastgradio (setup.py) ... done
-  Building wheel for ffmpy (setup.py) ... done
-  Building wheel for flask-cachebuster (setup.py) ... done
-Colab notebook detected. To show errors in colab notebook, set `debug=True` in `launch()`
-This share link will expire in 72 hours. If you need a permanent link, visit: https://gradio.app/introducing-hosted
-Running on External URL: https://26331.gradio.app
-Interface loading below...
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-        <iframe width="900" height="500" src="https://26331.gradio.app" frameborder="0" allowfullscreen=""></iframe>
-        
 </div>
 
 </div>
