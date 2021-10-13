@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Fastai fit_one_cycle &amp; fine_tune and Super-Convergence (Leslie Smith) | mldurga</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Fastai fit_one_cycle &amp; fine_tune and Super-Convergence (Leslie Smith)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Exploring Source code of fastai" />
+<meta property="og:description" content="Exploring Source code of fastai" />
+<link rel="canonical" href="https://mldurga.github.io/easydl/paper_reading/2021/10/15/super_convergence.html" />
+<meta property="og:url" content="https://mldurga.github.io/easydl/paper_reading/2021/10/15/super_convergence.html" />
+<meta property="og:site_name" content="mldurga" />
+<meta property="og:image" content="https://mldurga.github.io/easydl/images/some_folder/your_image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-15T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-10-15T00:00:00-05:00","url":"https://mldurga.github.io/easydl/paper_reading/2021/10/15/super_convergence.html","@type":"BlogPosting","image":"https://mldurga.github.io/easydl/images/some_folder/your_image.png","headline":"Fastai fit_one_cycle &amp; fine_tune and Super-Convergence (Leslie Smith)","dateModified":"2021-10-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mldurga.github.io/easydl/paper_reading/2021/10/15/super_convergence.html"},"description":"Exploring Source code of fastai","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/easydl/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mldurga.github.io/easydl/feed.xml" title="mldurga" /><link rel="shortcut icon" type="image/x-icon" href="/easydl/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/easydl/">mldurga</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/easydl/about/">About Me</a><a class="page-link" href="/easydl/search/">Search</a><a class="page-link" href="/easydl/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fastai ```fit_one_cycle``` &amp; ```fine_tune``` and Super-Convergence (Leslie Smith)</h1><p class="page-description">Exploring Source code of fastai</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-10-15T00:00:00-05:00" itemprop="datePublished">
+        Oct 15, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/easydl/categories/#paper_reading">paper_reading</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/mldurga/easydl/tree/master/_notebooks/2021-10-15-super_convergence.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/easydl/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/mldurga/easydl/master?filepath=_notebooks%2F2021-10-15-super_convergence.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/easydl/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/mldurga/easydl/blob/master/_notebooks/2021-10-15-super_convergence.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/easydl/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Topology-of-Loss-function">Topology of Loss function </a></li>
+<li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
+<li class="toc-entry toc-h2"><a href="#Learning-rate-and-Weight-updataion">Learning rate and Weight updataion </a></li>
+<li class="toc-entry toc-h2"><a href="#Cyclical-Learning-Rate-(CLR)">Cyclical Learning Rate (CLR) </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-10-15-super_convergence.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://colab.research.google.com/github/mldurga/easydl/blob/master/_notebooks/2021-10-15-super_convergence.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Topology-of-Loss-function">
+<a class="anchor" href="#Topology-of-Loss-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Topology of Loss function<a class="anchor-link" href="#Topology-of-Loss-function"> </a>
+</h2>
+<p>Nothing is more explainable than this 
+
+</p>
+<center>
+    <div class="jekyll-twitter-plugin">
+<blockquote class="twitter-tweet">
+<p lang="und" dir="ltr"><a href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DGLSL?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきGLSL</a><br>float i,e,f,s,g,k=.01;for(o++;i++&lt;1e2;g+=min(f,max(.03,e))*.3){s=2.;vec3 p=vec3((FC.xy-r/s)/r.y*g,g-s);p.yz*=rotate2D(-.8);p.z+=t;for(e=f=p.y;s&lt;2e2;s/=.6)p.xz*=rotate2D(s),e+=abs(dot(sin(p*s)/s,p-p+.4)),f+=abs(dot(sin(p.xz*s*.6)/s,r/r));o+=(f&gt;k*k?e:-exp(-f*f))*o*k;} <a href="https://t.co/aUHgeJEroY">pic.twitter.com/aUHgeJEroY</a></p>— yonatan (@zozuar) <a href="https://twitter.com/zozuar/status/1443012484189888515?ref_src=twsrc%5Etfw">September 29, 2021</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">
+<a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
+</h2>
+<p>Until publications of the papers <a href="https://arxiv.org/pdf/1506.01186.pdf">1</a>,<a href="https://arxiv.org/pdf/1803.09820.pdf">2</a>,<a href="https://arxiv.org/pdf/1708.07120.pdf">3</a> by Mr Leslie Smith, finding learning rate of neural networks training is largely a black art and often requires extensive practice and expertise to set good hyperparameters. Mr Smith's contribution greatly helped reserach community on overall understanding of the topology of loss function. Unlike typical Machine Learning papers, Smith's Papers are very much approachable and invaluable. I have tried to reproduce fastai source code of implementation of 1cycle policy inspired from Smith's papers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Learning-rate-and-Weight-updataion">
+<a class="anchor" href="#Learning-rate-and-Weight-updataion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning rate and Weight updataion<a class="anchor-link" href="#Learning-rate-and-Weight-updataion"> </a>
+</h2>
+<p>In neural networks training, loss function (simply distance between target value and predicted value) must be decreased with each iteration. SGD - stochastic gradient descent is the method to achieve the above stated goal. If you can observe the above twitter card, loss function topology will be more or less have same features. Identifying global minimum of that topology is the sole aim of any Machine learning practitioner. However, training gets trapped over local minima and model underperforms. This is where Smiths ideas catapulted training neural networks to the next level.</p>
+<p><img src="https://user-images.githubusercontent.com/19243618/137064877-7a3dae9f-496a-4847-b11c-56d0aadb6283.png" alt="image"></p>
+<p><code>w.new=w.old - gradient(w.old) * lr</code></p>
+<p>above image gives general idea of Lerning Rate value impact on convergence of loss function. weights will get updated for each iteration at the rate of choosen LR. Low LR can have effect of trapping at saddle points and local minima, High LR can immediately be diverged and loss value increases greatly. Until Smith's papers, setting right LR has been a great challenge.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Cyclical-Learning-Rate-(CLR)">
+<a class="anchor" href="#Cyclical-Learning-Rate-(CLR)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cyclical Learning Rate (CLR)<a class="anchor-link" href="#Cyclical-Learning-Rate-(CLR)"> </a>
+</h2>
+<p>Conventionally LR is a fixed value and tends to be decreased over a period of training until a good accuracy is obtained. Smith introduced novel technique of varying learning rate in cyclical fashion resulted in huge gains in accuracy in few iterations compared to the conventional practices.</p>
+<p><img src="https://user-images.githubusercontent.com/19243618/137067445-bef503ca-dc77-447b-88e7-ba6126908b2d.jpg" alt="cifar_LR"></p>
+<p>the CLR approach has clearly outperformed other techniques of setting LR as hown in figure. CLR achieved same accuracy within 20k iterations compared to 80k iterations of other techniques.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://user-images.githubusercontent.com/19243618/137067967-1190501e-5ff2-48dc-8a0e-644da78f92d0.png" alt="triangularWindow"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="mldurga/easydl"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/easydl/paper_reading/2021/10/15/super_convergence.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/easydl/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/easydl/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/easydl/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/mldurga" title="mldurga"><svg class="svg-icon grey"><use xlink:href="/easydl/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/durgaamma2005" title="durgaamma2005"><svg class="svg-icon grey"><use xlink:href="/easydl/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
