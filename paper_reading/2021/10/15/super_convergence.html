@@ -78,7 +78,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -216,12 +216,12 @@ window.onload = wrap_img;
 <li>batch size: No of images in a mini batch</li>
 <li>iteration: training over a mini batch</li>
 </ul>
-<p>Lets take 50,000 images to be train and with a 100 images per minibatch</p>
+<p>Lets take 50,000 images to be trained and with a 100 images per minibatch</p>
 <ul>
 <li>No of iterations per epoch =&gt; (50000/100) =500</li>
 <li>stepsize : Generally 2 times epoch, so every 1000 iterations we have one increaing learning rate and next 1000 iterations we have one decreasing learning rate, this becomes one cycle</li>
 </ul>
-<p>Smiths experiments shows that generally 3 cycles have trained the network within short iterations compared to conventional LR methods. However 1cycle paper in 2018 stated that one cycle is sufficient to train the network completely using very large learning rates.</p>
+<p>Smiths experiments shows that generally 3 cycles have trained the network within short iterations compared to conventional LR methods. However 1cycle <a href="https://arxiv.org/pdf/1708.07120.pdf">paper</a> in 2018 stated that one cycle is sufficient to train the network when very large learning rates are used.</p>
 
 </div>
 </div>
@@ -232,6 +232,25 @@ window.onload = wrap_img;
 <h2 id="Super-Convergence">
 <a class="anchor" href="#Super-Convergence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Super-Convergence<a class="anchor-link" href="#Super-Convergence"> </a>
 </h2>
+<p>Cyclic learning rates coupled with large values of learning rates leads to convergence much faster than standard training methods. The large learning rates allows training to jump over the local minimas and will find a way to global minima in much less time. Cyclical nature of the learning rates enables training to first slowly converge then moves at faster speeds to traverse the valley and again slows the pace to finally converge to final accuracy level.</p>
+<p><img src="https://user-images.githubusercontent.com/19243618/137189466-0b3eca30-9ad9-4e5b-9cf6-6b1c4deb5be9.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above images are from super-convergence paper. Figure (a) clearly shows the dominance of Super-Convergence approach denoted by CLR. With CLR range 0.1-3 (Learning rate bounds) accuracy obtained 92.4% within 10k iterations compared to 80k iterations of normal training methods on CIFAR-10 Dataset, ResNet-56 architecture.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To reiterate author words "Always use one cycle that is smaller than the total number of iterations/epochs and allow the learning rate to decrease several orders of magnitude less than the initial learning rate for the remaining iterations". This is called 1cycle policy or Super-Convergence. Since 1cycle policy have regularisation effect on overall training process, care must be taken to balance the remianing regularisation techniques like weight-decay, batch size, drop out etc.. depending on the dataset.</p>
+
 </div>
 </div>
 </div>
